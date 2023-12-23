@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="LoginForm" action="">
+        First Name: <input type="text" name="fname" value="Donald"><br>
+        Last Name: <input type="text" name="lname" value="Duck"><br>
+        <input type="button" value="Submit">
+    </form>
+    <p>Click the "Try it" Button to display the number of elements in the form</p>
+
+    <button onclick="myfunction()">Try it</button>
+
+    <p id="displayspace"></p>
+
+    <script>
+        function myfunction() {
+            var x = document.getElementById("LoginForm").elements.length;
+            var y = document.getElementById("LoginForm").elements[0].value;
+            var z = document.getElementById('LoginForm').elements[1].value;
+            document.getElementById("displayspace").innerHTML = "Found " + x + " elements in the form." + "First name entered is " + y + ". Last name entered is " + z;
+
+            const para = document.createElement('p');
+            para.innerText = "This is a paragraph created via DOM";
+            document.body.appendChild(para);
+        }
+    </script>
+</body>
+
+</html>

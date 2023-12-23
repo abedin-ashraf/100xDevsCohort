@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>JavaScirpt HTML DOM</h2>
+    <p>Finding HTML Element by Querey Selector</p>
+
+    <div class="my">Div One</div>
+    <p>Paragraph One</p>
+
+    <div class="yuor">Div two</div>
+    <p>Prargragph two</p>
+
+    <div class="my">Div Three</div>
+
+    <script>
+        var paragraphs = document.querySelectorAll('p'); //document
+        paragraphs.forEach(paragraph => paragraph.style.backgroundColor = 'red');
+
+        var divs = document.querySelectorAll('div.my');
+        divs.forEach(div => div.style.backgroundColor = 'blue');
+    </script>
+
+</body>
+
+</html>
