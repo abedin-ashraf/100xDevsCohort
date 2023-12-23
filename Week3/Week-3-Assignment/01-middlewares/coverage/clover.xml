@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1703048123102" clover="3.2.0">
-  <project timestamp="1703048123102" name="All files">
+<coverage generated="1703218695033" clover="3.2.0">
+  <project timestamp="1703218695033" name="All files">
     <metrics statements="33" coveredstatements="31" conditionals="4" coveredconditionals="3" methods="0" coveredmethods="0" elements="37" coveredelements="34" complexity="0" loc="33" ncloc="33" packages="1" files="1" classes="1"/>
-    <file name="03-errorcount.js" path="/home/ashraf/100xDevs/Week-3-Assignment/01-middlewares/03-errorcount.js">
+    <file name="03-errorcount.js" path="/home/ashraf/100xDevsCohort/Week3/Week-3-Assignment/01-middlewares/03-errorcount.js">
       <metrics statements="33" coveredstatements="31" conditionals="4" coveredconditionals="3" methods="0" coveredmethods="0"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
