@@ -1,0 +1,18 @@
+<body>
+    <script>
+        async function func() {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const height = parseFloat(document.getElementById('height').value);
+
+            const response = await fetch("http://localhost:3000/bmi?weight=" + weight + "&height=" + height);
+            const bmi = await response.text();
+
+            document.getElementById('result').innerHTML = "Your current BMI is " + bmi;
+        }
+    </script>
+    Weight(kg): <input id="weight" type="text">
+    Height(m): <input id='height' type="text">
+    <button onclick="func()">GET BMI</button>
+
+    <div id="result"></div>
+</body>

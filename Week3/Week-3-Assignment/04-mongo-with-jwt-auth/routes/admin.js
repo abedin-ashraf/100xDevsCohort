@@ -16,7 +16,7 @@ app.post('/signup', (req, res) => {
     })
     res.status(200).json({ message: 'Admin created successfully' });
     res.status(200).json({
-        token: json.sign({
+        token: jwt.sign({
             username: req.body.username,
             password: req.body.password
         }, jwtPassword)

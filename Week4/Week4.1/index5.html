@@ -1,11 +1,12 @@
 <body>
     <script>
         async function func() {
-            const principal = document.getElementById('principal');
-            const rate = document.getElementById('rate');
-            const time = document.getElementById('time');
+            const principal = parseInt(document.getElementById('principal').value);
+            const rate = parseFloat(document.getElementById('rate').value);
+            const time = parseInt(document.getElementById('time').value);
 
-            const response = await fetch('');
+            const response = await fetch('http://localhost:3000/profit?principal=' + principal + '&rate=' + rate + '&time=' + time);
+
             const res = await response.text();
 
             document.getElementById('result').innerHTML = res;
@@ -17,5 +18,5 @@
     Time: <input id="time" type="text"><br>
 
     <button onclick="func()">Calculate profit</button>
-    <div id="resutl"></div>
+    <div id="result"></div>
 </body>
