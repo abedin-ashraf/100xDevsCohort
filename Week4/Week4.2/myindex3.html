@@ -1,0 +1,54 @@
+<html>
+
+<body>
+    <script>
+        let todoList = [{
+            id: 1,
+            title: "Go to Gym",
+            description: "Going to gym is a good habit"
+        }, {
+            id: 2,
+            title: "Go for swimming",
+            description: "Swimming is very good for your health"
+        }];
+
+        function createChild(title, description) {
+            const titleDiv = document.createElement('div');
+            titleDiv.innerHTML = title;
+
+            const descriptionDiv = document.createElement('div');
+            descriptionDiv.innerHTML = description;
+
+            let id = todoList.length;
+            const buttonDiv = document.createElement('button');
+            buttonDiv.innerHTML = 'Mark as done';
+
+            // todoList.push({
+            //     id: id,
+            //     title: title,
+            //     description: description
+            // })
+
+            const parent = document.getElementById('todos');
+            parent.appendChild(titleDiv);
+            parent.appendChild(descriptionDiv);
+            parent.appendChild(buttonDiv);
+
+            console.log(todoList);
+        }
+
+        function createTodoFromList() {
+            for (let i = 0; i < todoList.length; i++) {
+                createChild(todoList[i].title, todoList[i].description);
+            }
+        }
+
+
+    </script>
+    <input id="todoName" type="text" placeholder="Title"><br>
+    <input id="description" type="text" placeholder="Description"><br>
+    <button onclick="createTodoFromList()">Add Todo</button>
+    <div id="todos"></div>
+</body>
+
+</html>

@@ -36,10 +36,10 @@ const User = mongoose.model('User', UserSchema);
 const Course = mongoose.model('Course', CourseSchema);
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Middleware for handling auth
-function adminMiddleware(req, res, next) {
+async function adminMiddleware(req, res, next) {
     // Implement admin auth logic
     // You need to check the headers and validate the admin from the admin DB. Check readme for the exact headers to be expected
-    const exisitingAdmin = Admin.findOne({ username: req.body.username, password: req.body.password });
+    const exisitingAdmin = await Admin.findOne({ username: req.body.username, password: req.body.password });
     if (exisitingAdmin) {
         next();
     } else {
@@ -48,10 +48,10 @@ function adminMiddleware(req, res, next) {
         })
     }
 }
-function userMiddleware(req, res, next) {
+async function userMiddleware(req, res, next) {
     // Implement user auth logic
     // You need to check the headers and validate the user from the user DB. Check readme for the exact headers to be expected
-    const existingUser = User.findOne({ username: req.body.username, password: req.body.password });
+    const existingUser = await User.findOne({ username: req.body.username, password: req.body.password });
     if (existingUser) {
         next();
     } else {
