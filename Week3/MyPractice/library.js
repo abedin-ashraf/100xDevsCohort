@@ -7,7 +7,7 @@ const jwt = require("jsonwebtoken");
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://admin:FSzAE8q87LSd2faf@cluster0.uof1tyg.mongodb.net/');
 
-const BookSchema = {
+const BookSchema = new mongoose.Schema({
     isbn: String,
     title: String,
     author: String,
@@ -15,24 +15,24 @@ const BookSchema = {
     publication_year: Number,
     copies_available: Number,
     total_copies: Number
-}
-const AuthorSchema = {
+})
+const AuthorSchema = new mongoose.Schema({
     author_id: Number,
     author_name: String
-}
-const MemberSchema = {
+})
+const MemberSchema = new mongoose.Schema({
     member_id: Number,
     member_name: String,
     contact_info: String,
     email: String
-}
-const TransactionSchema = {
+})
+const TransactionSchema = new mongoose.Schema({
     transaction_id: Number,
     isbn: String,
     member_id: Number,
     checkout: String,
     return: String
-}
+})
 
 const Book = mongoose.model("Book", BookSchema);
 const Author = mongoose.model('Author', AuthorSchema);

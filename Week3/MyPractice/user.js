@@ -5,10 +5,10 @@ app.use(bodyParser.json());
 const mongoose = require('mongoose');
 mongoose.connect("mongodb+srv://admin:FSzAE8q87LSd2faf@cluster0.uof1tyg.mongodb.net/");
 
-const UserSchema = {
+const UserSchema = new mongoose.Schema({
     email: String,
     password: String
-}
+})
 const User = mongoose.model("Users", UserSchema);
 
 async function userMiddleware(req, res, next) {
